@@ -33,7 +33,7 @@ class EntranceActivity : AppCompatActivity() {
     //окно авторизации, проверки добавятся позже
     fun authListener(view: View) {
         val dialog = AlertDialog.Builder(this)
-        dialog.setTitle("Регистрация")
+        dialog.setTitle("Авторизация")
 
         val inflater = LayoutInflater.from(this)
         val authWindow = inflater.inflate(R.layout.auth_layout, null)
@@ -58,6 +58,24 @@ class EntranceActivity : AppCompatActivity() {
 
     //окно регистрации, проверки добавятся позже
     fun regListener(view: View) {
+        val dialog  = AlertDialog.Builder(this)
+        dialog.setTitle("Регистрация")
 
+        val inflater = LayoutInflater.from(this)
+        val regWindow = inflater.inflate(R.layout.reg_layout, null)
+        dialog.setView(regWindow)
+
+        dialog.setNegativeButton("Отменить", DialogInterface.OnClickListener { dialogInterface, which ->
+            dialogInterface.dismiss()
+        })
+
+        //при нажатии происходит проверка введенных данных
+        //при корректности данных создается акк, и пользователя перебрасывает в активти навигации
+        //прверки будут реализованы позже, пока просто переход в активити
+        dialog.setPositiveButton("Подтвердить", DialogInterface.OnClickListener { dialogInterface, which ->
+            startActivity(Intent(this, NavigationActivity::class.java))
+        })
+
+        dialog.show()
     }
 }
