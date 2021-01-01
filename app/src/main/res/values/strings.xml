@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Car service</string>
+    <string name="hello">Добрый вечер, я диспетчер!</string>
+    <string name="auth">Авторизация</string>
+    <string name="reg">Регистрация</string>
+    <string name="pass">Пароль</string>
+    <string name="login">Логин</string>
+
+    <string name="title_activity_navigation">MainActivity</string>
+    <string name="title_account">Аккаунт</string>
+    <string name="title_service">Сервис</string>
+    <string name="title_cars">Мои авто</string>
 </resources>
