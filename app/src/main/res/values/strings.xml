@@ -15,5 +15,11 @@
     <string name="title_account">Аккаунт</string>
     <string name="title_service">Сервис</string>
     <string name="title_cars">Мои авто</string>
+    <string name="isService">В сервисе</string>
+    <string name="state_number">Гос номер</string>
+    <string name="brend">Марка</string>
+    <string name="FavoriteService">Избранные услуги</string>
+    <string name="ServicePrice">Цена услуги</string>
+    <string name="ServiceName">Название услуги</string>
 
 </resources>
