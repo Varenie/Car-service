@@ -11,8 +11,8 @@ import com.varenie.carservice.R
 class UserClassAccAdapter: RecyclerView.Adapter<UserClassAccAdapter.MyHolder>() {
 
     class MyHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val brend = itemView.findViewById<TextView>(R.id.tv_car_brend)
-        val statenumber = itemView.findViewById<TextView>(R.id.tv_car_number)
+        val brend = itemView.findViewById<TextView>(R.id.tv_acc_car_brand)
+        val statenumber = itemView.findViewById<TextView>(R.id.tv_acc_car_number)
         val isService = itemView.findViewById<TextView>(R.id.tv_is_in_service)
 
         fun bind() {

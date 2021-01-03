@@ -25,14 +25,14 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_car_brend"
+            android:id="@+id/tv_acc_car_brand"
             android:layout_width="100dp"
-            android:text="@string/brend"
+            android:text="@string/brand"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"/>
 
         <TextView
-            android:id="@+id/tv_car_number"
+            android:id="@+id/tv_acc_car_number"
             android:layout_width="100dp"
             android:text="@string/state_number"
             android:layout_height="wrap_content"
