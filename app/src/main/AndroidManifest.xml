@@ -11,7 +11,8 @@
         android:theme="@style/Theme.CarService">
         <activity
             android:name=".Activities.NavigationActivity"
-            android:label="@string/title_activity_navigation"></activity>
+            android:label="@string/title_activity_navigation"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.EntranceActivity"
             android:screenOrientation="portrait">

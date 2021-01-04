@@ -61,6 +61,14 @@
                 android:textSize="16sp"
                 android:layout_marginTop="9dp"
                 android:layout_marginBottom="5dp"/>
+
+<!--  если imageButton, то крашится  -->
+            <Button
+                android:id="@+id/btn_change_info"
+                android:layout_gravity="end"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_edit_24"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -86,7 +94,7 @@
                 android:layout_weight="0.95"/>
 
             <ImageButton
-                android:id="@+id/btn_add_car"
+                android:id="@+id/ibtn_add_car"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_add_24"

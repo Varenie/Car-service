@@ -3,23 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_account">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_account"
         android:name="com.varenie.carservice.Fragments.AccountFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_navigation_home_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_service"
         android:name="com.varenie.carservice.Fragments.ServiceFragment"
         android:label="@string/title_service"
         tools:layout="@layout/fragment_service" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_cars"
         android:name="com.varenie.carservice.Fragments.CarsFragment"
         android:label="@string/title_cars"
         tools:layout="@layout/fragment_cars" />
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.varenie.carservice.Fragments.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" />
 </navigation>

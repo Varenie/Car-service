@@ -1,10 +1,13 @@
 package com.varenie.carservice.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.varenie.carservice.Adapters.FavoriteServicesAdapter
@@ -24,6 +27,11 @@ class AccountFragment : Fragment() {
         val carAdapter = UserClassAccAdapter()
         val servicesAdapter = FavoriteServicesAdapter()
 
+        val btnEdit = root.findViewById<Button>(R.id.btn_change_info)
+        btnEdit.setOnClickListener{
+            editProfile(it)
+        }
+
         carRecycler.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false) // для горизонтального списка
         carRecycler.setHasFixedSize(true)
         servicesRecycler.layoutManager = LinearLayoutManager(requireContext())
@@ -33,5 +41,10 @@ class AccountFragment : Fragment() {
         servicesRecycler.adapter = servicesAdapter
 
         return root
+    }
+
+    fun editProfile(view: View) {
+//        Вызввается действие перехода из фрагмента аккаунта, в фрагмент тзменения инфы
+        Navigation.findNavController(view).navigate(R.id.action_navigation_home_to_userInfoFragment)
     }
 }

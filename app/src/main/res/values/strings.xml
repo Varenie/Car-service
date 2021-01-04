@@ -16,7 +16,7 @@
     <string name="title_service">Сервис</string>
     <string name="title_cars">Мои авто</string>
 
-<!--  Строки аккаунта  -->
+    <!--  Строки аккаунта  -->
     <string name="isService">В сервисе</string>
     <string name="state_number">Гос номер</string>
     <string name="brand">Марка</string>
@@ -24,7 +24,7 @@
     <string name="ServicePrice">Цена услуги</string>
     <string name="ServiceName">Название услуги</string>
 
-<!--  Блок сервиса  -->
+    <!--  Блок сервиса  -->
     <string name="STO">Сервис "Сервис"</string>
     <string name="address">Адрес: адресный преулок, дом 254</string>
     <string name="goToMap"><u>Посмотреть на карте</u></string>
@@ -38,5 +38,6 @@
     <string name="engineNumber">Номер двигателя</string>
     <string name="engineType">Тип двигателя</string>
     <string name="transmission">Тип трансмиссии</string>
+    
 
 </resources>
