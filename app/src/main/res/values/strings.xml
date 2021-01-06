@@ -32,12 +32,14 @@
     <string name="workers">Список работников</string>
     <string name="services">Список услуг</string>
     <string name="goToService">Записаться на услугу</string>
+
+<!--  Блок списка машин  -->
     <string name="model">Модель</string>
     <string name="color">Цвет машины</string>
     <string name="modelNumber">Номер модели</string>
     <string name="engineNumber">Номер двигателя</string>
     <string name="engineType">Тип двигателя</string>
     <string name="transmission">Тип трансмиссии</string>
-    
+
 
 </resources>
