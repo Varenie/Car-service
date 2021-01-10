@@ -5,6 +5,7 @@ import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.varenie.carservice.R
 
@@ -19,6 +20,15 @@ class UserCarsAdapter: RecyclerView.Adapter<UserCarsAdapter.MyHolder>() {
         val engineNumber = itemView.findViewById<TextView>(R.id.tv_engine_number)
         val engineType = itemView.findViewById<TextView>(R.id.tv_engine_type)
         val transmission = itemView.findViewById<TextView>(R.id.tv_transmission)
+
+        init {
+            super.itemView
+
+            itemView.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.action_cars_to_History)
+            }
+
+        }
 
         fun bind() {
 

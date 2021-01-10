@@ -3,23 +3,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_account">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_account"
         android:name="com.varenie.carservice.Fragments.AccountFragment"
         android:label="@string/title_account"
-        tools:layout="@layout/fragment_account" />
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_acc_to_edit_user"
+            app:destination="@id/userInfoFragment"
+            app:popUpTo="@id/navigation_account" />
+        <action
+            android:id="@+id/action_acc_to_carInfo"
+            app:destination="@id/carInfoFragment"
+            app:popUpTo="@id/navigation_account"/>
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_service"
         android:name="com.varenie.carservice.Fragments.ServiceFragment"
         android:label="@string/title_service"
-        tools:layout="@layout/fragment_service" />
+        tools:layout="@layout/fragment_service" >
+        <action
+            android:id="@+id/action_service_to_maps"
+            app:destination="@id/mapsFragment" />
+        <action
+            android:id="@+id/action_service_to_workers"
+            app:destination="@id/workersFragment" />
+        <action
+            android:id="@+id/action_service_to_services"
+            app:destination="@id/servicesFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_cars"
         android:name="com.varenie.carservice.Fragments.CarsFragment"
         android:label="@string/title_cars"
-        tools:layout="@layout/fragment_cars" />
+        tools:layout="@layout/fragment_cars" >
+        <action
+            android:id="@+id/action_cars_to_History"
+            app:destination="@id/servicesHistoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.varenie.carservice.Fragments.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" />
+
+    <fragment
+        android:id="@+id/carInfoFragment"
+        android:name="com.varenie.carservice.Fragments.CarInfoFragment"
+        android:label="fragment_car_info"
+        tools:layout="@layout/fragment_car_info" />
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.varenie.carservice.Fragments.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/workersFragment"
+        android:name="com.varenie.carservice.Fragments.WorkersFragment"
+        android:label="fragment_workers"
+        tools:layout="@layout/fragment_workers" />
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.varenie.carservice.Fragments.ServicesFragment"
+        android:label="fragment_services"
+        tools:layout="@layout/fragment_services" />
+    <fragment
+        android:id="@+id/servicesHistoryFragment"
+        android:name="com.varenie.carservice.Fragments.ServicesHistoryFragment"
+        android:label="fragment_services_history"
+        tools:layout="@layout/fragment_services_history" />
 </navigation>

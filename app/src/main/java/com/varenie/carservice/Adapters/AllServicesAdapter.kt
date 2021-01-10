@@ -1,28 +1,27 @@
 package com.varenie.carservice.Adapters
 
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.varenie.carservice.R
 
-class FavoriteServicesAdapter: RecyclerView.Adapter<FavoriteServicesAdapter.MyHolder>() {
+class AllServicesAdapter: RecyclerView.Adapter<AllServicesAdapter.MyHolder>() {
     class MyHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val name = itemView.findViewById<TextView>(R.id.tv_acc_service_name)
-        val price = itemView.findViewById<TextView>(R.id.tv_acc_service_price)
+        val name = itemView.findViewById<TextView>(R.id.tv_service_name)
+        val description = itemView.findViewById<TextView>(R.id.tv_service_description)
+        val price = itemView.findViewById<TextView>(R.id.tv_service_price)
 
         fun bind() {
-//            Тут будет размещаться инфа на элементах
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.acc_favorite_services_recycler_item, parent, false)
+        val view = inflater.inflate(R.layout.all_services_recycler_item, null)
 
         return MyHolder(view)
     }
@@ -31,8 +30,10 @@ class FavoriteServicesAdapter: RecyclerView.Adapter<FavoriteServicesAdapter.MyHo
         holder.bind()
     }
 
-//    временное решение
+//  временно
     override fun getItemCount(): Int {
-        return 5
+        return 3
     }
+
+
 }
