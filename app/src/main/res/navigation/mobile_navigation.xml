@@ -13,11 +13,11 @@
         <action
             android:id="@+id/action_acc_to_edit_user"
             app:destination="@id/userInfoFragment"
-            app:popUpTo="@id/navigation_account"
-            app:popUpToInclusive="false" />
+            app:popUpTo="@id/navigation_account" />
         <action
             android:id="@+id/action_acc_to_carInfo"
-            app:destination="@id/carInfoFragment" />
+            app:destination="@id/carInfoFragment"
+            app:popUpTo="@id/navigation_account"/>
     </fragment>
 
     <fragment
@@ -40,16 +40,17 @@
         android:id="@+id/navigation_cars"
         android:name="com.varenie.carservice.Fragments.CarsFragment"
         android:label="@string/title_cars"
-        tools:layout="@layout/fragment_cars" />
+        tools:layout="@layout/fragment_cars" >
+        <action
+            android:id="@+id/action_cars_to_History"
+            app:destination="@id/servicesHistoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/userInfoFragment"
         android:name="com.varenie.carservice.Fragments.UserInfoFragment"
         android:label="fragment_user_info"
-        tools:layout="@layout/fragment_user_info" >
-        <action
-            android:id="@+id/action_edit_user_to_acc"
-            app:destination="@id/navigation_account" />
-    </fragment>
+        tools:layout="@layout/fragment_user_info" />
+
     <fragment
         android:id="@+id/carInfoFragment"
         android:name="com.varenie.carservice.Fragments.CarInfoFragment"
@@ -70,4 +71,9 @@
         android:name="com.varenie.carservice.Fragments.ServicesFragment"
         android:label="fragment_services"
         tools:layout="@layout/fragment_services" />
+    <fragment
+        android:id="@+id/servicesHistoryFragment"
+        android:name="com.varenie.carservice.Fragments.ServicesHistoryFragment"
+        android:label="fragment_services_history"
+        tools:layout="@layout/fragment_services_history" />
 </navigation>
