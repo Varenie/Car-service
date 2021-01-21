@@ -9,9 +9,12 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doAfterTextChanged
+import com.google.android.material.textfield.TextInputLayout
 import com.rengwuxian.materialedittext.MaterialEditText
 import com.varenie.carservice.R
 import java.util.*
@@ -23,133 +26,56 @@ class EntranceActivity : AppCompatActivity() {
         setContentView(R.layout.activity_entrance)
 
         val btnAuth = findViewById<Button>(R.id.btn_auth)
-        val btnReg = findViewById<Button>(R.id.btn_reg)
+        val tvReg = findViewById<TextView>(R.id.tv_reg)
 
         //назначение обработчиков нажатий
         btnAuth.setOnClickListener {
-            authListener(it, "", "")
+            authListener(it)
         }
 
-        btnReg.setOnClickListener {
-            regListener(it, "", "", "", "", "", "")
+        tvReg.setOnClickListener {
+            regListener(it)
         }
     }
 
 
     //создает диалоговое окно Авторизации, пока только первичные проверки ввода
-    fun authListener(view: View, login: String?, password: String?) {
-        val dialog = AlertDialog.Builder(this)
-        dialog.setTitle("Авторизация")
+    fun authListener(view: View) {
+        val login = findViewById<TextInputLayout>(R.id.til_login_auth)
+        val password = findViewById<TextInputLayout>(R.id.til_pass_auth)
 
-        val inflater = LayoutInflater.from(this)
-        val authWindow = inflater.inflate(R.layout.auth_layout, null)
-        dialog.setView(authWindow)
-
-        val loginMet = authWindow.findViewById<MaterialEditText>(R.id.met_login_auth)
-        val passwordMet = authWindow.findViewById<MaterialEditText>(R.id.met_pass_auth)
-
-//      Назначаем текст с прошлого окна
-        loginMet.setText(login)
-        passwordMet.setText(password)
-
-//      диалог закрывается при нажатии на кнопку отменить
-        dialog.setNegativeButton("Отменить") { dialogInterface, which ->
-            dialogInterface.dismiss()
+       login.editText?.doAfterTextChanged {
+            login.error = null
         }
 
-        dialog.setPositiveButton("Подтвердить") { dialogInterface, which ->
-
-//          Вызвается функция проверки ввода данных, если все ок, запукскается следующее активити
-            if (checkAuth(loginMet, passwordMet)) {
-                startActivity(Intent(this, NavigationActivity::class.java))
-            } else {
-//              если возвращено false, диалог перезапускается, передавая заполненные поля
-                authListener(view, loginMet.text.toString(), passwordMet.text.toString())
-            }
+        password.editText?.doAfterTextChanged {
+            password.error = null
         }
 
-        dialog.show()
+        if (checkAuth(login, password)) {
+            startActivity(Intent(this, NavigationActivity::class.java))
+        }
     }
 
-    private fun checkAuth(login: MaterialEditText?, password: MaterialEditText?): Boolean {
+    private fun checkAuth(login: TextInputLayout?, password: TextInputLayout?): Boolean {
+        var isValid = true
 
-        when {
-            login?.text.isNullOrBlank() -> {
-                val toast = Toast.makeText(
-                        this,
-                        "Заполните поле логина!",
-                        Toast.LENGTH_SHORT
-                )
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-                return false
-            }
-
-            password?.text.isNullOrBlank() -> {
-                val toast = Toast.makeText(
-                        this,
-                        "Введите пароль!",
-                        Toast.LENGTH_SHORT
-                )
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-                return false
-            }
+        if (login?.editText?.text.isNullOrBlank()) {
+            login?.error = "Введите логин"
+            isValid = false
         }
 
-        return true
+        if (password?.editText?.text.isNullOrBlank()) {
+                password?.error = "Введите пароль"
+                isValid = false
+        }
+
+        return isValid
     }
 
     //создает диалоговое окно Регистрации, пока только первичные проверки ввода
-    fun regListener(view: View, email: String?, login: String?, fio: String?, phone: String?, pass: String?, passConfirm: String?) {
-        val dialog  = AlertDialog.Builder(this)
-        dialog.setTitle("Регистрация")
-
-        val inflater = LayoutInflater.from(this)
-        val regWindow = inflater.inflate(R.layout.reg_layout, null)
-        dialog.setView(regWindow)
-
-        val emailMet = regWindow.findViewById<MaterialEditText>(R.id.met_email)
-        val loginMet = regWindow.findViewById<MaterialEditText>(R.id.met_login)
-        val fioMet = regWindow.findViewById<MaterialEditText>(R.id.met_FIO)
-        val phoneMet = regWindow.findViewById<MaterialEditText>(R.id.met_phone)
-        val passwordMet = regWindow.findViewById<MaterialEditText>(R.id.met_pass)
-        val confirmPassMet = regWindow.findViewById<MaterialEditText>(R.id.met_pass_confirm)
-
-//      Добавление инфы с прошлого окна
-        emailMet.setText(email)
-        loginMet.setText(login)
-        fioMet.setText(fio)
-        phoneMet.setText(phone)
-        passwordMet.setText(pass)
-        confirmPassMet.setText(passConfirm)
-
-        dialog.setNegativeButton("Отменить") { dialogInterface, which ->
-            dialogInterface.dismiss()
-        }
-
-
-        dialog.setPositiveButton("Подтвердить") { dialogInterface, which ->
-//          запускается проверка всех полей, если все ок, переходим на следующее активити
-            if (checkReg(emailMet, loginMet, fioMet, phoneMet, passwordMet, confirmPassMet)) {
-                startActivity(Intent(this, NavigationActivity::class.java))
-            } else {
-
-
-//              Сделлал, чтобы строка не сильно длинная была, тут занчения с editText берутся
-                val emailNew = emailMet.text.toString()
-                val loginNew = loginMet.text.toString()
-                val fioNew = fioMet.text.toString()
-                val phoneNew = phoneMet.text.toString()
-                val passNew = passwordMet.text.toString()
-                val passConfirmNew = confirmPassMet.text.toString()
-
-//              Если все плохо, то перезапускаем окно
-                regListener(view, emailNew, loginNew, fioNew, phoneNew, passNew, passConfirmNew)
-            }
-        }
-
-        dialog.show()
+    fun regListener(view: View) {
+        startActivity(Intent(this, RegistrationActivity::class.java))
     }
 
 //  Впринципе можно сделать так, что он сначала проверяет все поля, а потом выводит сообщение, какие поля не соответствуют
