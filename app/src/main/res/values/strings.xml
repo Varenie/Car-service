@@ -2,7 +2,8 @@
     <string name="app_name">Car service</string>
     <string name="hello">Добрый вечер, я диспетчер!</string>
     <string name="auth">Авторизация</string>
-    <string name="reg">Регистрация</string>
+    <string name="reg">Нет аккаунта?</string>
+    <string name="Enter">Войти</string>
 
     <string name="pass">Пароль</string>
     <string name="login">Логин</string>
