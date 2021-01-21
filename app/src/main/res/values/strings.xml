@@ -4,6 +4,7 @@
     <string name="auth">Авторизация</string>
     <string name="reg">Нет аккаунта?</string>
     <string name="Enter">Войти</string>
+    <string name="confirm">Подтвердить</string>
 
     <string name="pass">Пароль</string>
     <string name="login">Логин</string>
@@ -11,6 +12,7 @@
     <string name="pass_confirm">Повторите пароль</string>
     <string name="FIO">Фамилия Имя Отчество</string>
     <string name="phone">Телефон</string>
+    <string name="pass_info">Пароль должен содержать от 6 до 15 символов</string>
 
     <string name="title_activity_navigation">MainActivity</string>
     <string name="title_account">Аккаунт</string>

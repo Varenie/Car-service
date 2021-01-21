@@ -30,7 +30,7 @@ class EntranceActivity : AppCompatActivity() {
 
         //назначение обработчиков нажатий
         btnAuth.setOnClickListener {
-            authListener(it)
+            authListener()
         }
 
         tvReg.setOnClickListener {
@@ -39,29 +39,31 @@ class EntranceActivity : AppCompatActivity() {
     }
 
 
-    //создает диалоговое окно Авторизации, пока только первичные проверки ввода
-    fun authListener(view: View) {
-        val login = findViewById<TextInputLayout>(R.id.til_login_auth)
+//  вызывает функцию проверки ввода, если ее проходит, то прееходит в основное активити
+    fun authListener() {
+        val email = findViewById<TextInputLayout>(R.id.til_email_auth)
         val password = findViewById<TextInputLayout>(R.id.til_pass_auth)
 
-       login.editText?.doAfterTextChanged {
-            login.error = null
+//      очищает сообщения об ошибках, после ввода текста
+        email.editText?.doAfterTextChanged {
+            email.error = null
         }
 
         password.editText?.doAfterTextChanged {
             password.error = null
         }
 
-        if (checkAuth(login, password)) {
+        if (checkAuth(email, password)) {
             startActivity(Intent(this, NavigationActivity::class.java))
         }
     }
 
-    private fun checkAuth(login: TextInputLayout?, password: TextInputLayout?): Boolean {
+//  Проверка данных пользователя
+    private fun checkAuth(email: TextInputLayout?, password: TextInputLayout?): Boolean {
         var isValid = true
 
-        if (login?.editText?.text.isNullOrBlank()) {
-            login?.error = "Введите логин"
+        if (email?.editText?.text.isNullOrBlank()) {
+            email?.error = "Введите логин"
             isValid = false
         }
 
@@ -73,101 +75,8 @@ class EntranceActivity : AppCompatActivity() {
         return isValid
     }
 
-    //создает диалоговое окно Регистрации, пока только первичные проверки ввода
+//  Переход на регистраци.
     fun regListener(view: View) {
         startActivity(Intent(this, RegistrationActivity::class.java))
     }
-
-//  Впринципе можно сделать так, что он сначала проверяет все поля, а потом выводит сообщение, какие поля не соответствуют
-    private fun checkReg(emailMet: MaterialEditText?, loginMet: MaterialEditText?, fioMet: MaterialEditText?, phoneMet: MaterialEditText?, passwordMet: MaterialEditText?, confirmPassMet: MaterialEditText?): Boolean {
-        when {
-            emailMet?.text.isNullOrBlank() -> {
-                val toast = Toast.makeText(
-                        this,
-                        "Введите email!",
-                        Toast.LENGTH_SHORT
-                )
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-                return false
-            }
-
-            loginMet?.text.isNullOrBlank() -> {
-                val toast = Toast.makeText(
-                        this,
-                        "Введите логин!",
-                        Toast.LENGTH_SHORT
-                )
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-                return false
-            }
-
-            fioMet?.text.isNullOrBlank() -> {
-                val toast = Toast.makeText(
-                        this,
-                        "Введите ФИО!",
-                        Toast.LENGTH_SHORT
-                )
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-                return false
-            }
-
-            phoneMet?.text.isNullOrBlank() -> {
-                val toast = Toast.makeText(
-                        this,
-                        "Введите телефон!",
-                        Toast.LENGTH_SHORT
-                )
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-                return false
-            }
-
-            passwordMet?.text.isNullOrBlank() -> {
-                val toast = Toast.makeText(
-                        this,
-                        "Введите пароль!",
-                        Toast.LENGTH_SHORT
-                )
-                toast.setGravity(Gravity.TOP, 0, 0)
-                toast.show()
-                return false
-
-            }
-
-            else -> {
-                val pass = passwordMet?.text.toString()
-                val passConfirm = confirmPassMet?.text.toString()
-
-                when {
-                    pass.length < 5  || pass.length > 15-> {
-                        val toast = Toast.makeText(
-                                this,
-                                "Пароль должен содеражть от 5 до 15 символов",
-                                Toast.LENGTH_SHORT
-                        )
-                        toast.setGravity(Gravity.TOP, 0, 0)
-                        toast.show()
-                        return false
-                    }
-
-                    pass.compareTo(passConfirm) != 0 -> {
-                        val toast = Toast.makeText(
-                                this,
-                                "Пароли должны совпадать!",
-                                Toast.LENGTH_SHORT
-                        )
-                        toast.setGravity(Gravity.TOP, 0, 0)
-                        toast.show()
-                        return false
-                    }
-                }
-
-                return true
-            }
-        }
-    }
-
 }
