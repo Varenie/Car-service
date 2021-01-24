@@ -1,98 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.UserInfoFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<!--  Мало ли что еще добавим, решил поместить в линейный макет  -->
-    <LinearLayout
-        android:id="@+id/ll_icon_block"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_height="match_parent"
+        tools:context=".Fragments.UserInfoFragment">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view"
-            android:layout_width="wrap_content"
+    <!--  Мало ли что еще добавим, решил поместить в линейный макет  -->
+        <LinearLayout
+            android:id="@+id/ll_icon_block"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
             android:layout_margin="10dp">
 
-            <ImageView
-                android:id="@+id/iv_user"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/user"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp">
 
-        </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/iv_user"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/user"/>
 
-    </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    <LinearLayout
-        android:id="@+id/ll_info_block"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_icon_block"
-        android:orientation="vertical"
-        android:layout_margin="10dp">
+        </LinearLayout>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_user_email"
+        <LinearLayout
+            android:id="@+id/ll_info_block"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:textSize="20sp"
-            android:inputType="textEmailAddress"
-            app:met_floatingLabel="normal"
-            app:met_singleLineEllipsis="true"
-            android:layout_margin="3dp"
-            android:maxLength="30"
-            android:textColor="@color/white"/>
+            android:layout_below="@+id/ll_icon_block"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_user_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/login"
-            android:textSize="20sp"
-            android:inputType="text"
-            app:met_floatingLabel="normal"
-            app:met_singleLineEllipsis="true"
-            app:met_maxCharacters="15"
-            android:layout_margin="3dp"
-            android:maxLength="15"
-            android:textColor="@color/white"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_fio_change"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/FIO"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true">
 
-        <!--   Возможно стоит пересмотреть макс количесвто символов     -->
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_user_FIO"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/FIO"
-            android:textSize="20sp"
-            android:inputType="text"
-            app:met_floatingLabel="normal"
-            app:met_singleLineEllipsis="true"
-            android:layout_margin="3dp"
-            android:maxLength="50"
-            android:textColor="@color/white"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_fio_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:maxLength="45"
+                    android:textSize="16sp"
+                    android:inputType="textPersonName"/>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_user_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/phone"
-            android:textSize="20sp"
-            android:inputType="phone"
-            app:met_floatingLabel="normal"
-            app:met_singleLineEllipsis="true"
-            android:layout_margin="3dp"
-            android:maxLength="12"
-            android:textColor="@color/white"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-<!--    не уверен, что тут нужно менять пароль, но если шо добавлю    -->
-    </LinearLayout>
-</RelativeLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_email_change"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_email_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:maxLength="45"
+                    android:textSize="16sp"
+                    android:inputType="textEmailAddress"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_phone_change"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_phone_change"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"
+                    android:maxLength="11"
+                    android:textSize="16sp"
+                    android:inputType="phone"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_confirm_changes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm"
+                android:textSize="16sp"/>
+
+    <!--    не уверен, что тут нужно менять пароль, но если шо добавлю    -->
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

@@ -3,15 +3,11 @@ package com.varenie.carservice.Activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.BoringLayout
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
-import android.widget.Button
-import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
-import com.google.android.material.textfield.TextInputLayout
 import com.varenie.carservice.R
 import com.varenie.carservice.databinding.ActivityRegistrationBinding
 import java.util.regex.Pattern
@@ -39,15 +35,16 @@ class RegistrationActivity : AppCompatActivity() {
 
 //  назначает листенеры ввода на все поля
     private fun setupListeners() {
-        binding.tietFioReg.addTextChangedListener(TextFieldValidation(binding.tietFioReg))
-        binding.tietEmailReg.addTextChangedListener(TextFieldValidation(binding.tietEmailReg))
-        binding.tietPhoneReg.addTextChangedListener(TextFieldValidation(binding.tietPhoneReg))
-        binding.tietPassReg.addTextChangedListener(TextFieldValidation(binding.tietPassReg))
-        binding.tietConfirmPassReg.addTextChangedListener(TextFieldValidation(binding.tietConfirmPassReg))
+        binding.tietFioReg.addTextChangedListener(TFValidationReg(binding.tietFioReg))
+        binding.tietEmailReg.addTextChangedListener(TFValidationReg(binding.tietEmailReg))
+        binding.tietPhoneReg.addTextChangedListener(TFValidationReg(binding.tietPhoneReg))
+        binding.tietPassReg.addTextChangedListener(TFValidationReg(binding.tietPassReg))
+        binding.tietConfirmPassReg.addTextChangedListener(TFValidationReg(binding.tietConfirmPassReg))
     }
 
 //  Класс для обработки ввода в реальном времени
-    inner class TextFieldValidation(private val view: View): TextWatcher {
+//  взято отсюда https://habr.com/ru/company/otus/blog/529886/
+    inner class TFValidationReg(private val view: View): TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
 
         override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }

@@ -40,7 +40,7 @@ class EntranceActivity : AppCompatActivity() {
 
 
 //  вызывает функцию проверки ввода, если ее проходит, то прееходит в основное активити
-    fun authListener() {
+    private fun authListener() {
         val email = findViewById<TextInputLayout>(R.id.til_email_auth)
         val password = findViewById<TextInputLayout>(R.id.til_pass_auth)
 
@@ -59,6 +59,7 @@ class EntranceActivity : AppCompatActivity() {
     }
 
 //  Проверка данных пользователя
+//  Позже появятся новые проверки
     private fun checkAuth(email: TextInputLayout?, password: TextInputLayout?): Boolean {
         var isValid = true
 
