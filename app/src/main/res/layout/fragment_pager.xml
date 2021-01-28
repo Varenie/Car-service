@@ -9,6 +9,6 @@
         android:id="@+id/rv_history"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/services_history_recycler_item"/>
+        tools:listitem="@layout/recycler_item_services_history"/>
 
 </RelativeLayout>

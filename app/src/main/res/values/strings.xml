@@ -53,6 +53,8 @@
     <string name="comments">Поле комментариев</string>
     <string name="isPaid">Оплачено/не оплачено</string>
     <string name="done_date">Дата завершения работы</string>
+    <string name="akpp">Автоматическая</string>
+    <string name="mkpp">Механическая</string>
 
 
 </resources>

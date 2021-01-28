@@ -21,7 +21,7 @@ class WorkersAdapter: RecyclerView.Adapter<WorkersAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.workers_recycler_item, null)
+        val view = inflater.inflate(R.layout.recycler_item_workers, null)
 
         return MyHolder(view)
     }

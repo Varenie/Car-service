@@ -17,7 +17,7 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.services_history_recycler_item, null)
+        val view = inflater.inflate(R.layout.recycler_item_services_history, null)
 
         return MyHolder(view)
     }

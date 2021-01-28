@@ -9,6 +9,6 @@
         android:id="@+id/rv_all_services"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/all_services_recycler_item"/>
+        tools:listitem="@layout/recycler_item_all_services"/>
 
 </FrameLayout>

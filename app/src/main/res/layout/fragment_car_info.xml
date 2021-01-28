@@ -1,105 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="Fragments.CarInfoFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:id="@+id/ll_car_icon"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:context="Fragments.CarInfoFragment">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center_horizontal">
-
-            <ImageView
-                android:id="@+id/iv_user"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/car" />
-
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_car_info_block"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/ll_car_icon"
-        android:orientation="vertical">
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_state_number"
+        <LinearLayout
+            android:id="@+id/ll_car_icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/state_number"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
+            android:orientation="vertical">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_brand"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_user"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/car"/>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_car_info_block"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/brand"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
+            android:layout_height="527dp"
+            android:layout_below="@id/ll_car_icon"
+            android:orientation="vertical">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_model"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/model"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_car_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.9"/>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/color"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/btn_add_car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Добавить машину"
+                android:layout_weight="0.1"/>
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_model_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/modelNumber"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_engine_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/engineNumber"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_engine_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/engineType"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/met_car_transmission"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/transmission"
-            app:met_floatingLabel="normal"
-            android:layout_margin="5dp"/>
-
-    </LinearLayout>
-</RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

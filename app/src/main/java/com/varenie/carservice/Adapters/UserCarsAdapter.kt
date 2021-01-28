@@ -1,7 +1,6 @@
 package com.varenie.carservice.Adapters
 
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -38,7 +37,7 @@ class UserCarsAdapter: RecyclerView.Adapter<UserCarsAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.user_cars_recycler_item, parent, false)
+        val view = inflater.inflate(R.layout.recycler_item_user_cars, parent, false)
 
         return MyHolder(view)
     }

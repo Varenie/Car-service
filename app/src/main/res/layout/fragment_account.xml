@@ -106,7 +106,7 @@
             android:id="@+id/rv_acc_cars_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/acc_cars_recycler_item"/>
+            tools:listitem="@layout/recycler_item_acc_cars"/>
     </LinearLayout>
 
 <!--  Блок избранных услуг  -->
@@ -130,6 +130,6 @@
             android:id="@+id/rv_favorite_services"
             android:layout_width="match_parent"
             android:layout_height="232dp"
-            tools:listitem="@layout/acc_favorite_services_recycler_item"/>
+            tools:listitem="@layout/recycler_item_acc_favorite_services"/>
     </LinearLayout>
 </RelativeLayout>
