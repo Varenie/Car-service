@@ -34,6 +34,12 @@ android {
     dataBinding{
         enabled true
     }
+
+    repositories {
+        maven {
+            url "http://maven.google.com/"
+        }
+    }
 }
 
 dependencies {
@@ -62,4 +68,8 @@ dependencies {
     //Material Design
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'com.google.android.material:material:1.2.1'
+
+    // Облегчённая библиотека, содержит только карту, слой пробок,
+    // LocationManager, UserLocationLayer и возможность скачивать оффлайн карты (только в платной версии).
+    implementation 'com.yandex.android:maps.mobile:4.0.0-lite'
 }

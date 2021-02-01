@@ -11,17 +11,15 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/rb_akpp"
+            android:id="@+id/rb_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/akpp"
             android:layout_weight="0.5"/>
 
         <RadioButton
-            android:id="@+id/rb_mkpp"
+            android:id="@+id/rb_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/mkpp"
             android:layout_weight="0.5"/>
     </RadioGroup>
 
