@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Car service</string>
+    <string name="hello">Добрый вечер, я диспетчер!</string>
+    <string name="auth">Авторизация</string>
+    <string name="reg">Нет аккаунта?</string>
+    <string name="Enter">Войти</string>
+    <string name="confirm">Подтвердить</string>
+
+    <string name="pass">Пароль</string>
+    <string name="login">Логин</string>
+    <string name="email">Email</string>
+    <string name="pass_confirm">Повторите пароль</string>
+    <string name="FIO">Фамилия Имя Отчество</string>
+    <string name="phone">Телефон</string>
+    <string name="pass_info">Пароль должен содержать от 6 до 15 символов</string>
+
+    <string name="title_activity_navigation">MainActivity</string>
+    <string name="title_account">Аккаунт</string>
+    <string name="title_service">Сервис</string>
+    <string name="title_cars">Мои авто</string>
+
+    <!--  Строки аккаунта  -->
+    <string name="isService">В сервисе</string>
+    <string name="state_number">Гос номер</string>
+    <string name="brand">Марка</string>
+    <string name="FavoriteService">Избранные услуги</string>
+    <string name="ServicePrice">Цена услуги</string>
+    <string name="ServiceName">Название услуги</string>
+
+    <!--  Блок сервиса  -->
+    <string name="STO">Сервис "Сервис"</string>
+    <string name="address">Адрес: адресный преулок, дом 254</string>
+    <string name="goToMap"><u>Посмотреть на карте</u></string>
+    <string name="worktime">Время работы: работаем 24/7 вечериннка каждый день</string>
+    <string name="workers">Список работников</string>
+    <string name="services">Список услуг</string>
+    <string name="goToService">Записаться на услугу</string>
+
+    <!--  Блок списка машин  -->
+    <string name="model">Модель</string>
+    <string name="color">Цвет машины</string>
+    <string name="modelNumber">Номер модели</string>
+    <string name="engineNumber">Номер двигателя</string>
+    <string name="engineType">Тип двигателя</string>
+    <string name="transmission">Тип трансмиссии</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">Описание</string>
+    <string name="workerServices">Список предоставляемых услуг</string>
+    <string name="privateField">Здесь будет инфа о масле/пробеге/замененные детали</string>
+    <string name="orderDate">Дата заказа</string>
+    <string name="comments">Поле комментариев</string>
+    <string name="isPaid">Оплачено/не оплачено</string>
+    <string name="done_date">Дата завершения работы</string>
+    <string name="akpp">Автоматическая</string>
+    <string name="mkpp">Механическая</string>
+
+
+</resources>

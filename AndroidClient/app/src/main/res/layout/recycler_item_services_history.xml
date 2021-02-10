@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_history_service_name"
+        android:text="@string/ServiceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+<!--  Поле для частынх случаев  -->
+    <TextView
+        android:id="@+id/tv_history_private_field"
+        android:text="@string/privateField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+    <TextView
+        android:id="@+id/tv_history_order_date"
+        android:text="@string/orderDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+    <TextView
+        android:id="@+id/tv_history_service_price"
+        android:text="@string/ServicePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+    <TextView
+        android:id="@+id/tv_history_service_worker"
+        android:text="@string/FIO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+<!-- Не уверен, нужно ли   -->
+    <TextView
+        android:id="@+id/tv_history_comments"
+        android:text="@string/comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+    <TextView
+        android:id="@+id/tv_history_is_paid"
+        android:text="@string/isPaid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+    <TextView
+        android:id="@+id/tv_history_done_date"
+        android:text="@string/done_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="3dp"
+        android:background="@color/black"/>
+
+</LinearLayout>
